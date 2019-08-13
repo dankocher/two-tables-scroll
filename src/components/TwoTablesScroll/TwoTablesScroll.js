@@ -16,15 +16,23 @@ class TwoTablesScroll extends React.Component {
     state = {
         scrolled: false,
         leftSidePosition: 0,
-        topSidePosition: 0
+        topSidePosition: 0,
+        leftScroll: 0,
+        hWidthScroll: 240,
+        vWidthScroll: 0,
+        topScroll: 0
     };
 
 
     componentDidMount() {
-        console.log(this.__left.clientWidth, this.props.leftMinSize, this.props.leftPosition);
         this.setState({
             leftSidePosition: -(this.__left.clientWidth - this.props.leftMinSize) + this.props.leftPosition
-        })
+        });
+
+        let aspectRatio = this.__scroll.clientWidth / this.__content.clientWidth;
+        let hWidthScroll = aspectRatio * this.__scroll.clientWidth;
+        this.setState({hWidthScroll});
+        this.startScroll()
     }
 
     handleHorizontalScroll = (e) => {
@@ -48,15 +56,19 @@ class TwoTablesScroll extends React.Component {
             leftScroll = this.props.leftMinSize
         }
         this.props.setScrollPosition(leftScroll);
+
+        let aspectRatio = this.__scroll.clientWidth / this.__content.clientWidth;
+        this.setState({leftScroll: scrollLeft * aspectRatio });
     };
 
     render() {
-        const {leftComponent, rightComponent, leftMinSize} = this.props;
+        const {leftComponent, rightComponent, leftPosition} = this.props;
         return <div className={`two-tables-scroll${this.state.scrolled ? " -scrolled" : ""}`}
                     ref={__scroll => this.__scroll = __scroll}
             onScroll={this.handleHorizontalScroll}
         >
             <div className={`scroll-content`}
+                 ref={__content => this.__content = __content}
                  style={{paddingLeft: this.state.scrolled ? this.__left.clientWidth : 0}}>
                 <div className="left-component"
                     ref={__left => this.__left = __left}
@@ -71,8 +83,61 @@ class TwoTablesScroll extends React.Component {
                     {rightComponent}
                 </div>
             </div>
+            <div className="hor-scroll"
+                 style={{
+                     width: `calc(100% - ${leftPosition}px)`,
+                     left: leftPosition
+                 }}
+            >
+                <div className="s-thumb"
+                     onMouseUp={this.mouseUpHandle}
+                     onMouseMove={this.mouseMoveHandle}
+                     onMouseDown={this.mouseDownHandle}
+                     style={{
+                    width: this.state.hWidthScroll,
+                    left: this.state.leftScroll
+                }}/>
+            </div>
+            <div className="v-scroll">
+                <div className="-thumb"/>
+            </div>
         </div>
     }
+
+    startScroll() {
+        if (!this.state.scrollStarted) {
+            window.addEventListener('mouseup', this.mouseUpHandle);
+            window.addEventListener('mousemove', this.mouseMoveHandle);
+            this.setState({scrollStarted: true})
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('mouseup', this.mouseUpHandle);
+        window.removeEventListener('mousemove', this.mouseMoveHandle);
+    }
+
+    mouseUpHandle = (e) => {
+        if (this.state.dragging) {
+            this.setState({dragging: false});
+        }
+    };
+
+    mouseDownHandle = (e) => {
+        if (!this.state.dragging) {
+            this.setState({dragging: true});
+            this.lastClientX = e.clientX;
+            e.preventDefault();
+        }
+    };
+
+    mouseMoveHandle = (e) => {
+        if (this.state.dragging) {
+            // let scrollTop = scroll_top * this.__container.offsetHeight / this.state.height;
+
+            this.__scroll.scrollLeft += (-this.lastClientX + (this.lastClientX = e.clientX)) * this.__content.offsetWidth / this.__scroll.offsetWidth;
+        }
+    };
 }
 
 export default TwoTablesScroll;
