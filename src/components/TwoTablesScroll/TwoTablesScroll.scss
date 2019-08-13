@@ -1,0 +1,32 @@
+.two-tables-scroll {
+  overflow: scroll;
+  width: 100%;
+  display: inline-flex;
+  justify-content: flex-start;
+  max-height: 100%;
+  //height: 100%;
+  .scroll-content {
+    display: inline-flex;
+    .left-component {
+
+    }
+
+    .right-component {
+
+    }
+  }
+
+  &.-scrolled {
+    .scroll-content {
+      //position: relative;
+      .left-component {
+        position: absolute;
+        z-index: 10;
+      }
+
+      .right-component {
+        z-index: 9;
+      }
+    }
+  }
+}
