@@ -9,7 +9,8 @@ class TwoTablesScroll extends React.Component {
         rightComponent: PropTypes.object.isRequired,
         leftMinSize: PropTypes.number.isRequired,
         leftPosition: PropTypes.number.isRequired,
-        topPosition: PropTypes.number.isRequired
+        topPosition: PropTypes.number.isRequired,
+        setScrollPosition: PropTypes.func.isRequired
     };
 
     state = {
@@ -30,7 +31,6 @@ class TwoTablesScroll extends React.Component {
         const scrollLeft = this.__scroll.scrollLeft;
         const leftWidth = this.__left.clientWidth;
         const minLeftScroll = leftWidth - this.props.leftMinSize;
-        console.log(this.__scroll.scrollTop, this.props.topPosition)
         this.setState({
             topSidePosition: -this.__scroll.scrollTop + this.props.topPosition
         });
@@ -43,6 +43,11 @@ class TwoTablesScroll extends React.Component {
                 this.setState({scrolled: false})
             }
         }
+        let leftScroll = this.__left.clientWidth - this.__scroll.scrollLeft;
+        if (leftScroll < this.props.leftMinSize) {
+            leftScroll = this.props.leftMinSize
+        }
+        this.props.setScrollPosition(leftScroll);
     };
 
     render() {

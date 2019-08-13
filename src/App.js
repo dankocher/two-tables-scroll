@@ -7,7 +7,8 @@ class App extends React.Component {
   state = {
     left: 0,
     top: 0,
-    showTable: false
+    showTable: false,
+    scrollPosition: 0
   };
 
   componentDidMount() {
@@ -32,6 +33,11 @@ class App extends React.Component {
     return <div style={{backgroundColor: 'green', width: 2000, height: 2000}}>{this.getContent()}</div>
   };
 
+  setScrollPosition = scrollPosition => {
+    console.log(scrollPosition)
+    this.setState({scrollPosition})
+  };
+
   render() {
     return <div className="App">
       <div className="header" ref={header => this.header = header}>
@@ -49,6 +55,7 @@ class App extends React.Component {
                 leftComponent={this.getLeftComponent()}
                 rightComponent={this.getRightComponent()}
                 leftMinSize={500}
+                setScrollPosition={this.setScrollPosition}
             />
           }
         </div>
