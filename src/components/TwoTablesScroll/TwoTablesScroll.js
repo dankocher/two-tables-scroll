@@ -20,7 +20,9 @@ class TwoTablesScroll extends React.Component {
         leftScroll: 0,
         hWidthScroll: 240,
         vHeightScroll: 0,
-        topScroll: 0
+        topScroll: 0,
+        hAspectRatio: 1,
+        vAspectRatio: 1,
     };
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -47,13 +49,13 @@ class TwoTablesScroll extends React.Component {
         let hAspectRatio = (this.__scroll.clientWidth - 17) / this.__content.clientWidth;
         let hWidthScroll = hAspectRatio * this.__scroll.clientWidth;
         if(hWidthScroll !== this.state.hWidthScroll) {
-            this.setState({hWidthScroll});
+            this.setState({hWidthScroll, hAspectRatio: (this.__scroll.clientWidth / this.__content.clientWidth)});
         }
 
         let vAspectRatio = (this.__scroll.clientHeight - 17) / this.__content.clientHeight;
         let vHeightScroll = vAspectRatio * this.__scroll.clientHeight;
         if(vHeightScroll !== this.state.vHeightScroll) {
-            this.setState({vHeightScroll});
+            this.setState({vHeightScroll, vAspectRatio: (this.__scroll.clientHeight / this.__content.clientHeight)});
         }
 
     };
@@ -106,41 +108,30 @@ class TwoTablesScroll extends React.Component {
                      }}>
                     {leftComponent}
                 </div>
-                <div className="right-component"
-                     ref={__right => this.__right = __right}>
+                <div className="right-component">
                     {rightComponent}
                 </div>
             </div>
-            <div className="h-scroll"
-                 style={{
-                     width: `calc(100% - ${leftPosition}px)`,
-                     left: leftPosition
-                 }}
-            >
-                <div className="-thumb"
-                     onMouseUp={this.mouseUpHandle_horizontal}
-                     onMouseMove={this.mouseMoveHandle_horizontal}
-                     onMouseDown={this.mouseDownHandle_horizontal}
-                     style={{
-                         width: this.state.hWidthScroll,
-                         left: this.state.leftScroll
-                     }}/>
-            </div>
-            <div className="v-scroll"
-                 style={{
-                     height: `calc(100% - ${topPosition}px)`,
-                     top: topPosition
-                 }}>
-                <div className="-thumb"
-                     onMouseUp={this.mouseUpHandle_vertical}
-                     onMouseMove={this.mouseMoveHandle_vertical}
-                     onMouseDown={this.mouseDownHandle_vertical}
-                     style={{
-                         height: this.state.vHeightScroll,
-                         top: this.state.topScroll
-                     }}/>
-                     <div className="-end"/>
-            </div>
+
+            {   this.state.hAspectRatio >= 1 ? null :
+                <div className="h-scroll" style={{width: `calc(100% - ${leftPosition}px)`, left: leftPosition}}>
+                    <div className="-thumb"
+                         onMouseUp={this.mouseUpHandle_horizontal}
+                         onMouseMove={this.mouseMoveHandle_horizontal}
+                         onMouseDown={this.mouseDownHandle_horizontal}
+                         style={{width: this.state.hWidthScroll, left: this.state.leftScroll}}/>
+                </div>
+            }
+            {   this.state.vAspectRatio >= 1 ? null :
+                <div className="v-scroll" style={{height: `calc(100% - ${topPosition}px)`, top: topPosition}}>
+                    <div className="-thumb"
+                         onMouseUp={this.mouseUpHandle_vertical}
+                         onMouseMove={this.mouseMoveHandle_vertical}
+                         onMouseDown={this.mouseDownHandle_vertical}
+                         style={{height: this.state.vHeightScroll, top: this.state.topScroll}}/>
+                    <div className="-end"/>
+                </div>
+            }
         </div>
     }
 

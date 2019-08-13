@@ -4,7 +4,6 @@
     <list default="true" id="706f778b-1d1a-450e-a4d6-d328b99cf06e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.scss" afterDir="false" />
     </list>
@@ -18,14 +17,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5643209">
+    <splitter split-orientation="horizontal" split-proportion="0.7023756">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="552">
-                  <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+                <state relative-caret-position="634">
+                  <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -36,8 +35,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="965">
-                  <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+                <state relative-caret-position="917">
+                  <caret line="106" column="29" lean-forward="true" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -52,8 +51,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1707">
-                  <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+                <state relative-caret-position="164">
+                  <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
                   <folding>
                     <element signature="e#296#492#0" />
                   </folding>
@@ -99,10 +98,10 @@
         <option value="$PROJECT_DIR$/src/components.js" />
         <option value="$PROJECT_DIR$/src/components/TwoTablesScroll/index.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/App.scss" />
-        <option value="$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.scss" />
+        <option value="$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.js" />
       </list>
     </option>
   </component>
@@ -149,10 +148,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -197,7 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565630145433</updated>
       <workItem from="1565630146874" duration="8298000" />
-      <workItem from="1565687942923" duration="8877000" />
+      <workItem from="1565687942923" duration="10237000" />
     </task>
     <task id="LOCAL-00001" summary="Added leftScroll function">
       <created>1565687224231</created>
@@ -213,15 +215,28 @@
       <option name="project" value="LOCAL" />
       <updated>1565694103967</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Vertical Scroll">
+      <created>1565698988029</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1565698988029</updated>
+    </task>
+    <task id="LOCAL-00004" summary="hide scrollbar on firefox">
+      <created>1565699399638</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565699399638</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17175000" />
+    <option name="totallyTimeSpent" value="18535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-15" y="23" width="2252" height="2092" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.22327341" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -271,7 +286,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added leftScroll function" />
     <MESSAGE value="Added Horizontal Scroll" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Horizontal Scroll" />
+    <MESSAGE value="Added Vertical Scroll" />
+    <MESSAGE value="hide scrollbar on firefox" />
+    <option name="LAST_COMMIT_MESSAGE" value="hide scrollbar on firefox" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/components.js" />
@@ -291,18 +308,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="965">
-          <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+        <state relative-caret-position="634">
+          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -311,10 +318,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1707">
-          <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+        <state relative-caret-position="164">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
           <folding>
             <element signature="e#296#492#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TwoTablesScroll/TwoTablesScroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="917">
+          <caret line="106" column="29" lean-forward="true" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

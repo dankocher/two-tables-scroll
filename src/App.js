@@ -27,10 +27,10 @@ class App extends React.Component {
   };
 
   getLeftComponent = () => {
-    return <div style={{backgroundColor: 'red', width: 938, height: 2000}}>{this.getContent()}</div>
+    return <div style={{backgroundColor: 'red', width: 938, height: 500}}>{this.getContent()}</div>
   };
   getRightComponent = () => {
-    return <div style={{backgroundColor: 'green', width: 1567, height: 2000}}>{this.getContent()}</div>
+    return <div style={{backgroundColor: 'green', width: 1567, height: 500}}>{this.getContent()}</div>
   };
 
   setScrollPosition = scrollPosition => {
