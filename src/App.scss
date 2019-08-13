@@ -23,13 +23,13 @@ html, body, #root, .App {
     height: calc(100% - 60px);
     width: 100%;
     .left-section {
-      width: 400px;
+      width: 295px;
       background-color: white;
       display: flex;
       z-index: 100;
     }
     .right-section {
-      width: calc(100% - 400px);
+      width: calc(100% - 295px);
       overflow: hidden;
       max-height: 100%;
     }

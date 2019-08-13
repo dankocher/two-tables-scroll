@@ -33,13 +33,11 @@
 
   &::-webkit-scrollbar {
     -webkit-appearance: none;
-  }
-  &::-webkit-scrollbar:horizontal {
     width: 0;
     height: 0;
   }
 
-  .hor-scroll {
+  .h-scroll {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -47,13 +45,38 @@
     height: 17px;
     background-color: lightgray;
     z-index: 20;
-    .s-thumb {
-      margin: 1px 0 1px;
+    .-thumb {
+      margin: 1px 0;
       background-color: gray;
       height: 15px;
       right: 0;
       position: absolute;
       border-radius: 10px;
+    }
+  }
+
+  .v-scroll {
+    position: absolute;
+    right: 0;
+    width: 17px;
+    background-color: lightgray;
+    z-index: 20;
+    top: 0;
+    .-thumb {
+      margin: 0 1px;
+      background-color: gray;
+      width: 15px;
+      top: 0;
+      position: absolute;
+      border-radius: 10px;
+    }
+    .-end {
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: darkgray;
     }
   }
 }
